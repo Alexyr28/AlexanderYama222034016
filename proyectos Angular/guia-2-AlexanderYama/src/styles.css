@@ -1,1 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    /*H2*/
+    --ColorH2: #ff4900;
+    --FuenteH2: 2rem;
+    /*Parrafo1*/
+    --FuenteP1: 16px;
+    --ColorP: #0093FF;
+    --Fuente1: Arial;
+    /*Parrafo2*/
+    --FuenteP2: 12px;
+    --ColorP2: #c500ff;
+    --Fuente2: Nerko One;
+    /*Link1*/
+    --ColorLink: #001bff;
+    --FuenteL: Bold;
+    --text-decoration: none;
+    /*EncabezadoTabla*/
+    --Enacabezado: #000000;
+    --FEncabezado: #ffffff;
+    --TEncabezado: 1.5rem;
+
+}
+
+h2{
+    color: var(--ColorH2);
+    font-size: var(--FuenteH2);
+}
+
+.Parrafo1{
+    color: var(--ColorP);
+    font-size: var(--FuenteP1);
+    font-family: var(--Fuente1);
+}
+
+.Parrafo2{
+    color: var(--ColorP);
+    font-size: var(--FuenteP2);
+    font-family: var(--Fuente2);
+}
+
+a{
+    color: var(--ColorLink);
+    font-weight: var(--FuenteL);
+    text-decoration: none;
+}
+
+a:visited{
+    color: #4CAF50;
+}
+
+a:hover{
+    color: #ff6600;
+    text-decoration:underline;
+}
+
+th{
+    background-color: var(--Enacabezado);
+    color: var(--FEncabezado);
+    font-size: var(--TEncabezado);
+}
+
+.Fila1{
+    background-color: #bec1c3;
+    color: #000000;
+    font-size: var(--TEncabezado);
+}
+
+.Fila2{
+    background-color: #045795;
+    color:  #ffffff;
+    font-size: var(--TEncabezado);
+}
+
+table{
+    border-collapse: collapse;
+    border-radius: 10px;
+    width: 100%;
+}
+

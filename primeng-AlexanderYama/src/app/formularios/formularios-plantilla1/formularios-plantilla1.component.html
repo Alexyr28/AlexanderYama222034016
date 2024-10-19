@@ -1,6 +1,7 @@
 <div class="card flex justify-content-center">
-    <input type="text" pInputText [(ngModel)]="value" placeholder="User" />
+    <input type="text" pInputText [(ngModel)]="user" placeholder="User" />
 </div>
 <div class="card flex  justify-content-center">
-    <input type="password" pInputText [(ngModel)]="value" placeholder="Password" />
+    <p-password [(ngModel)]="value" [feedback]="false" placeholder="Password" />
 </div>
+

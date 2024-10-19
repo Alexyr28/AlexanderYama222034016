@@ -13,4 +13,5 @@ import { FormsModule } from '@angular/forms';
 })
 export class FormulariosPlantilla1Component {
   value: string='';
+  user: string='';
 }

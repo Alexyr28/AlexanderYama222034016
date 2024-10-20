@@ -1,1 +1,28 @@
-<p>login</p>
+<form [formGroup] = "loginForm">
+    <div class="card flex justify-content-center h-full">
+        <p-card header="Login" [style]="{width:'360px'}">
+            <div class="field">
+                <input 
+                type="text"
+                pInputText
+                formControlName="usuario"
+                class="w-full"
+                name="usuario"
+                placeholder="Username"
+                />
+            </div>
+            <div class="field">
+                <input 
+                type="text"
+                pInputText
+                formControlName="password"
+                class="w-full"
+                name="password"
+                placeholder="Password"
+                />
+            </div>
+            <p-button label="Iniciar Sesión" styleClass="w-full"></p-button>
+            <div class="mt-2"> ¿No estas Registrado? <a routerLink="/register">Registrarme</a></div>
+        </p-card>
+    </div>
+</form>

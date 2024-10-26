@@ -1,0 +1,28 @@
+<div class="p-Inputgroup">
+    <span class="pi-Inputgroup-addon">
+            <i class=" pi pi-user">
+            </i>
+    </span>
+</div>
+<form [formGroup]="checkboxForm" (ngSubmit)="onSubmit()">
+    <h3>Selecciona tus Opciones</h3>
+    <div *ngFor="let opcion of opciones" class="pb-3">
+        <p-checkbox 
+        name="seleccion" 
+        [value]="opcion.value" 
+        [formControlName]="'seleccion'" 
+        inputId="{{opcion.value}}">
+        </p-checkbox>
+        <label [for]="opcion.value">{{opcion.label}}</label>
+    </div>
+    <div *ngFor="let opcion2 of opcionesrb" class="pb-3">
+        <p-radioButton 
+        name="seleccion" 
+        [value]="opcion2.value" 
+        [formControlName]="'seleccion'" 
+        inputId="{{opcion2.value}}">
+        </p-radioButton>
+        <label [for]="opcion2.value">{{opcion2.label}}</label>
+    </div>
+    <button type="submit" pButton label="Enviar"></button>
+</form>

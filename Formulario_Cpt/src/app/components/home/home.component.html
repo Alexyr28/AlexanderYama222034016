@@ -1,1 +1,6 @@
-<app-form-principal></app-form-principal>
+<app-form-principal [prinForm]="formPrincipal"></app-form-principal>
+<app-form-gerente [gerenForm]="formGerente"></app-form-gerente>
+<app-form-licencia [licForm]="formLicencia"></app-form-licencia>
+<div class="pt-3 flex justify-content-center">
+    <p-button type="submit" label="Enviar" (onClick)="onSubmit()"></p-button>
+</div>

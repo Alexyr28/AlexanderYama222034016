@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
@@ -13,14 +13,15 @@ import { InputTextModule } from 'primeng/inputtext';
   styleUrl: './form-principal.component.css'
 })
 export class FormPrincipalComponent {
-  prinForm: FormGroup;
+  @Input() prinForm: FormGroup;
+  
 
   constructor(private fb: FormBuilder){
     this.prinForm = this.fb.group({
       name: ['', Validators.required],
       apelli: ['', Validators.required],
       email: ['',[Validators.required, Validators.email]],
-      tel: ['', Validators.required]
+      tel: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]]
     })
   }
 }

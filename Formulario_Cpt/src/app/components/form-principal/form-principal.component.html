@@ -35,7 +35,7 @@
             <div class="field col">
                 <p-inputGroup>
                     <p-inputGroupAddon><i class="pi pi-envelope"></i></p-inputGroupAddon>
-                    <input type="email" id="email" pInputText formControlName="email" placeholder="Primer Nombre">
+                    <input type="email" id="email" pInputText formControlName="email" placeholder="Correo Eléctronico">
                 </p-inputGroup>
                 <div *ngIf="prinForm.controls['email'].invalid && prinForm.controls['email'].touched" class="error">Correo No Válido</div>
             </div>
@@ -50,9 +50,9 @@
             <div class="field col">
                 <p-inputGroup>
                     <p-inputGroupAddon><i class="pi pi-phone"></i></p-inputGroupAddon>
-                    <input type="tel" id="tel" pInputText formControlName="tel" placeholder="Primer Nombre">
+                    <input type="tel" id="tel" pInputText formControlName="tel" placeholder="Teléfono">
                 </p-inputGroup>
-                <div *ngIf="prinForm.controls['tel'].invalid && prinForm.controls['tel'].touched" class="error">Teléfono no Válido</div>
+                <div *ngIf="prinForm.controls['tel'].invalid && prinForm.controls['tel'].touched" class="error">Teléfono No Válido</div>
             </div>
         </div>
     </form>

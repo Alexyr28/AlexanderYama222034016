@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
+import { LoginService } from '../../services/login.service';
+import { response } from 'express';
 
 @Component({
   selector: 'app-login-test',
@@ -15,7 +17,7 @@ import { PasswordModule } from 'primeng/password';
 export class LoginTestComponent {
   userForm: FormGroup;//FormGroup Captura
 
-  constructor(private fb: FormBuilder){//FormBuilder Procesa
+  constructor(private fb: FormBuilder, private loginService: LoginService){//FormBuilder Procesa
     this.userForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -25,6 +27,8 @@ export class LoginTestComponent {
 
   onSubmit(){
     if(this.userForm.valid){
+      const {email,password} = this.userForm.value;
+      this.loginService.login(email, password).subscribe(response => {console.log("Exitoso", response)})
       console.log(this.userForm.value);
     }else{
       console.log('Formulario invalido')

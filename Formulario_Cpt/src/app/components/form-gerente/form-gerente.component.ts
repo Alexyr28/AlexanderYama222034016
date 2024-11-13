@@ -18,8 +18,8 @@ export class FormGerenteComponent {
 
   constructor(private fb: FormBuilder){
     this.gerenForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['',[Validators.required, Validators.email]]
+      nameg: ['', Validators.required],
+      emailg: ['',[Validators.required, Validators.email]]
     })
   }
 }

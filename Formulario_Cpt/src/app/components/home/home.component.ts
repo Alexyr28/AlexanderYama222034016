@@ -5,6 +5,8 @@ import { FormLicenciaComponent } from "../form-licencia/form-licencia.component"
 import { ButtonModule } from 'primeng/button';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ServicesService } from '../../services/services.service';
+import { response } from 'express';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +20,7 @@ export class HomeComponent {
   formGerente: FormGroup;
   formLicencia: FormGroup;
   
-  constructor(private fb: FormBuilder){
+  constructor(private fb: FormBuilder, private sendService: ServicesService){
     this.formPrincipal = this.fb.group({
       name: ['', Validators.required],
       apelli: ['', Validators.required],
@@ -26,8 +28,8 @@ export class HomeComponent {
       tel: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]]
     });
     this.formGerente = this.fb.group({
-      name: ['', Validators.required],
-      email: ['',[Validators.required, Validators.email]]
+      nameg: ['', Validators.required],
+      emailg: ['',[Validators.required, Validators.email]]
     });
     this.formLicencia = this.fb.group({
       inicio: ['',Validators.required],
@@ -36,12 +38,29 @@ export class HomeComponent {
     });
   }
   onSubmit() {
-    if(this.formPrincipal.valid && this.formGerente.valid && this.formLicencia.valid){
-      console.log("Form Principal:", this.formPrincipal.value);
-      console.log("Form Gerente:", this.formGerente.value);
-      console.log("Form Licencia:", this.formLicencia.value);
-    }else{
-      console.log('Formulario Invalido')
-    }
+
+    const {name,apelli,email,tel} = this.formPrincipal.value;
+    const {nameg,emailg} = this.formGerente.value;
+    const {inicio,fin,text} = this.formLicencia.value;
+
+    this.sendService.send(name,apelli,email,tel,nameg,emailg,inicio,fin,text).subscribe({
+      next: (response) => {
+        console.log("Información enviada Exitosamente", response);
+      },
+      error: error =>{
+        console.log("Error al enviar información", error);
+      },
+      complete:() => {
+        console.log("Envío de información completado");
+      },
+    })
+
+    // if(this.formPrincipal.valid && this.formGerente.valid && this.formLicencia.valid){
+    //   console.log("Form Principal:", this.formPrincipal.value);
+    //   console.log("Form Gerente:", this.formGerente.value);
+    //   console.log("Form Licencia:", this.formLicencia.value);
+    // }else{
+    //   console.log('Formulario Invalido')
+    // }
   }
 }

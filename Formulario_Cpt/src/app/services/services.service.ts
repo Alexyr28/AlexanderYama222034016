@@ -13,6 +13,6 @@ export class ServicesService {
 
   send(username: string, lastname: string, correo: string, telefono: string, namegerente: string, correogerente: string, fechainicio: string, fechafin: string, notas: string):Observable<any>{
     const body = {username,lastname,correo,telefono,namegerente,correogerente,fechainicio,fechafin,notas};
-    return this.http.post(`${this.apiUrl}/send`, body);
+    return this.http.post(`${this.apiUrl}/send`, {username,lastname,correo,telefono,namegerente,correogerente,fechainicio,fechafin,notas});
   }
 }

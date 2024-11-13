@@ -1,7 +1,7 @@
 <div class="card p-fluid">
     <form [formGroup]="gerenForm">
         <div class="p-field pt-3">
-            <label class="gowun-dodum-regular" for="name">Nombre del Gerente</label>
+            <label class="gowun-dodum-regular" for="nameg">Nombre del Gerente</label>
         </div>
         <div class="p-field pt-1">
             <label class="italic-light-gray">Descripción</label>
@@ -10,13 +10,13 @@
             <div class="field col">
                 <p-inputGroup>
                     <p-inputGroupAddon><i class="pi pi-briefcase"></i></p-inputGroupAddon>
-                    <input type="name" id="name" pInputText formControlName="name" placeholder="Nombre">
+                    <input type="name" id="nameg" pInputText formControlName="nameg" placeholder="Nombre">
                 </p-inputGroup>
-                <div *ngIf="gerenForm.controls['email'].invalid && gerenForm.controls['email'].touched" class="error">Nombre No Válido</div>
+                <div *ngIf="gerenForm.controls['nameg'].invalid && gerenForm.controls['nameg'].touched" class="error">Nombre No Válido</div>
             </div>
         </div>
         <div class="p-field pt-3">
-            <label class="gowun-dodum-regular" for="email">Correo electrónico</label>
+            <label class="gowun-dodum-regular" for="emailg">Correo electrónico</label>
         </div>
         <div class="p-field pt-1">
             <label class="italic-light-gray">Descripción</label>
@@ -25,9 +25,9 @@
             <div class="field col">
                 <p-inputGroup>
                     <p-inputGroupAddon><i class="pi pi-envelope"></i></p-inputGroupAddon>
-                    <input type="email" id="email" pInputText formControlName="email" placeholder="Correo Eléctronico">
+                    <input type="email" id="emailg" pInputText formControlName="emailg" placeholder="Correo Eléctronico">
                 </p-inputGroup>
-                <div *ngIf="gerenForm.controls['email'].invalid && gerenForm.controls['email'].touched" class="error">Correo No Válido</div>
+                <div *ngIf="gerenForm.controls['emailg'].invalid && gerenForm.controls['emailg'].touched" class="error">Correo No Válido</div>
             </div>
         </div>
     </form>

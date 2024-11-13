@@ -2,5 +2,5 @@
 <app-form-gerente [gerenForm]="formGerente"></app-form-gerente>
 <app-form-licencia [licForm]="formLicencia"></app-form-licencia>
 <div class="pt-3 flex justify-content-center">
-    <p-button type="submit" label="Enviar" (onClick)="onSubmit()"></p-button>
+    <p-button type="submit" label="Enviar" (onClick)="onSubmit()" [disabled]="!formPrincipal.valid || !formGerente.valid || !formLicencia.valid"></p-button>
 </div>

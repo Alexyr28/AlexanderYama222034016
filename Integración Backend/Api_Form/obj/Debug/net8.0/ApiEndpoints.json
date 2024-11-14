@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "Api_Form.Controllers.UsersController",
+    "Method": "Send",
+    "RelativePath": "api/Users/send",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Api_Form.Users",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

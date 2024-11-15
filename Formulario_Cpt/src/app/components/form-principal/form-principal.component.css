@@ -1,0 +1,15 @@
+.gowun-dodum-regular {
+    font-family: "Gowun Dodum", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+}  
+.italic-light-gray {
+    font-style: italic;
+    color: #b0b0b0; /* Gris claro */
+}
+.error{
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}

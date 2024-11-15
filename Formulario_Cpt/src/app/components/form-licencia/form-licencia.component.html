@@ -1,0 +1,50 @@
+<div class="p-fluid">
+    <div class="p-field pt-3">
+        <label class="gowun-dodum-regular">Detalles de la Licencia</label>
+    </div>
+    <form [formGroup]="licForm">
+        <div class="p-field pt-3">
+            <label class="gowun-dodum-regular" for="inicio">Fecha de Inicio</label>
+        </div>
+        <div class="p-field pt-1">
+            <label class="italic-light-gray">Descripción</label>
+        </div>
+        <div class="pt-1 formgrid grid">
+            <p-inputGroup>
+                <p-inputGroupAddon><i class="pi pi-calendar"></i></p-inputGroupAddon>
+                <p-calendar id="inicio" formControlName="inicio" placeholder="Inicio"></p-calendar>
+            </p-inputGroup>
+            <div *ngIf="licForm.controls['inicio'].invalid && licForm.controls['inicio'].touched" class="error">Fecha Requerida</div>
+        </div>
+        <div class="p-field pt-3">
+            <label class="gowun-dodum-regular" for="inicio">Fecha de Finalización</label>
+        </div>
+        <div class="p-field pt-1">
+            <label class="italic-light-gray">Descripción</label>
+        </div>
+        <div class="pt-1 formgrid grid">
+            <p-inputGroup>
+                <p-inputGroupAddon><i class="pi pi-calendar"></i></p-inputGroupAddon>
+                <p-calendar id="fin" formControlName="fin" placeholder="Finalización"></p-calendar>
+            </p-inputGroup>
+            <div *ngIf="licForm.controls['fin'].invalid && licForm.controls['fin'].touched" class="error">Fecha Requerida</div>
+        </div>
+        <div class="p-field pt-3">
+            <label class="gowun-dodum-regular" for="Notas">Notas</label>
+        </div>
+        <div class="p-field pt-1">
+            <label class="italic-light-gray">Descripción</label>
+        </div>
+        <div class="p-field">
+            <p-inputGroup>
+                <textarea 
+                    rows="5"
+                    cols="30" 
+                    pInputTextarea 
+                    formControlName="text">
+                </textarea>
+                <p-inputGroupAddon><i class="pi pi-align-left"></i></p-inputGroupAddon>
+            </p-inputGroup>
+        </div>
+    </form>
+</div>

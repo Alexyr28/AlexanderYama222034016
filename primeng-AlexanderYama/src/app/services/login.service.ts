@@ -19,4 +19,22 @@ export class LoginService {
     const body = {username,password};
     return this.http.post(`${this.apiUrl}/register`, {username, password})// el /register es el metodo del endpoint
   }
+  
+  updateUser(id: string, username: string, password: string): Observable<any>{
+    const body = {username, password};
+    return this.http.put(`${this.apiUrl}/update/${id}`, body);
+  }
+
+  deleteUser(id: string):Observable<any>{
+    return this.http.delete(`${this.apiUrl}/delete/${id}`);
+  }
+
+  getUser(): Observable<any[]>{
+    return this.http.get<any[]>(`${this.apiUrl}/getusers`);
+  }
+
+  //Obtener usuario por su Id
+  getUserById(userId: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/getUserById/${userId}`);
+  }
 }

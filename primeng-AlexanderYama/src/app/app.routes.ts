@@ -7,6 +7,7 @@ import { OtherFormComponent } from './components/other-form/other-form.component
 import { OtherFormCbComponent } from './components/other-form-cb/other-form-cb.component';
 import { UserManagementComponent } from './components/user-management/user-management.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
+import { FilteruserComponent } from './components/filteruser/filteruser.component';
 
 export const routes: Routes = [
     {
@@ -49,5 +50,9 @@ export const routes: Routes = [
     {
         path: 'listusers',
         component: ListUsersComponent
+    },
+    {
+        path: 'filteruser',
+        component: FilteruserComponent
     }
 ];
